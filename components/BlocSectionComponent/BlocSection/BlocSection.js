@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroHomeSection from '../BlocSectionManager/HeroHomeSection/HeroHomeSection';
 import styles from './BlocSection.module.scss';
 
 // hero : Hero
@@ -11,22 +12,22 @@ export default function BlocSection({data}) {
 
   switch (data.bloc_type) {
     case 'hero':
-        return <p> hero </p>
+        return <HeroHomeSection content={data}/>
 
     case 'speech':
-      return <p> speech </p>
+      return <div> speech </div>
 
     case 'paragraph-2':
-      return <p> paragraph-2 </p>
+      return 
 
     case 'paragraph-1':
-      return <p> paragraph-1 </p>
+      return 
     
     case 'review':
-      return <p> review </p>
+      return 
 
     case 'path':
-      return <p> path </p>
+      return 
     default:
       return <p> components type not found </p>
   }

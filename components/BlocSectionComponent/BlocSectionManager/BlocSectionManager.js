@@ -8,7 +8,7 @@ export default function BlocSectionManager({content}) {
     <>{ content && Array.isArray(content) && content.length > 0 &&
         <>
         {content.map(bloc => {
-            return <BlocSection data={bloc} key={uuidv4()}/>
+            return <div key={uuidv4()}> <BlocSection data={bloc} /></div>
         })}
         </>
     }
