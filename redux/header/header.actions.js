@@ -8,3 +8,8 @@ export const setIsShowSearch = (isShow) => ({
     type: headerTypes.SET_IS_SHOW_SEARCH,
     payload: isShow
 })
+
+export const setIsUpMenu = (isUpMenu) => ({ 
+    type: headerTypes.SET_IS_UP_MENU,
+    payload: isUpMenu
+})

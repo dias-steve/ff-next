@@ -30,6 +30,7 @@ export default function SubMenu() {
                 colorLabel='white'
                 colorBackgroud ='orange'
                 link='https://google.fr/'
+                onHeader={true}
             />
         </div>
 

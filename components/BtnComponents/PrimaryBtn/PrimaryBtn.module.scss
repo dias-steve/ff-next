@@ -16,6 +16,33 @@
         background-color: $primary-color-orange !important;
         color: white !important;
      }
+     &.on_header{
+        .arrow_icon{
+
+            filter:  brightness(0) invert(1);
+    
+        }
+        &:hover{
+            border: 3px solid transparent !important;
+        }
+        @media screen and (max-width: 540px) {
+  
+            background-color: white !important;
+            color: $primary-color-orange !important;
+
+            .arrow_icon{
+                
+                filter:  unset;
+            }
+
+            &:hover{
+                border: 3px solid white !important;
+                background-color: $primary-color-orange !important;
+            }
+         }
+     }
+
+     
 
     .label{
         font-family: $font-family-title;

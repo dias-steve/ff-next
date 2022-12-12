@@ -1,36 +1,112 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
-.global_container{
-    display: flex;
+.global_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  transition: 300ms;
+  transform: translateY(-150%);
+  z-index: 10;
+  background-color: $primary-color-orange;
+  height: 60px;
+
+  &.isShow {
+    transform: translateY(0);
+  }
+
+  &.transparent_bg {
+    background-color: transparent !important;
+  }
+  .global_content {
+    max-width: $content-max-width;
+    padding: 0px $content-side-padding;
     width: 100%;
-    justify-content: center;
- 
-    position: fixed;
-    top: 0;
-    transition: 300ms;
-    transform: translateY(-150%);
-    z-index:10;
-    background-color: $primary-color-orange;
-    height: 60px;
-    &.isShow{
-        transform: translateY(0);
-    }
+    display: flex;
 
-    &.transparent_bg{
-        background-color: transparent !important;
-    }
-    .global_content{
-        max-width: $content-max-width;
-        padding: 0px $content-side-padding;
-        width: 100%;
-        display: flex;
-        
-        align-items: center;
+    align-items: center;
 
-        .subMenu_wrapper{
-            flex: 1;
-            margin-left: 10px;
+    .subMenu_wrapper {
+      flex: 1;
+      margin-left: 10px;
+
+      @media screen and (max-width: 540px) {
+        margin-left: 0px;
+        background-color: $primary-color-orange;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        left: 0;
+        top: 0;
+        min-height: 500px;
+        width: 100vw;
+        height: 100vh;
+        padding: 100px 30px 0 30px;
+        transition: 300ms;
+
+        &.is_up {
+          transform: translateY(-100%);
         }
 
+        &.is_down {
+          transform: translateY(0%);
+        }
+      }
+    }
+    .logo {
+      position: relative;
+      z-index: 11;
+    }
+  }
+}
+
+.burgerbtn_wrapper{
+    @media screen and (min-width:541px){
+       display: none;
+    }
+    cursor: pointer;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 12;
+    background-color: $primary-color-orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    transition: 300ms;
+
+    &.show_burger_icon {
+        .burger_icon{
+            opacity: 1;
+        }
+        .close_icon{
+           opacity: 0;
+        }
+
+    }
+
+    &.show_close_icon {
+        .burger_icon{
+            opacity: 0;
+        }
+        .close_icon{
+           opacity: 1;
+        }
+
+    }
+    .burger_icon{
+        width: 30px;
+    }
+    .close_icon{
+        width: 20px;
+    }
+    .icon_menu{
+        position: absolute;
     }
 }

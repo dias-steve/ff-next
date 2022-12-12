@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setIsShowMenu,
   setIsShowSearch,
+  setIsUpMenu,
 } from "../../redux/header/header.actions";
 
 import styles from "./Header.module.scss";
@@ -19,10 +20,11 @@ const mapState = (state) => ({
 export default function Header() {
   const { auth, header } = useSelector(mapState);
   const [isShow, setIsShow] = useState(true);
-  const { is_show_menu, is_show_search } = header;
+  const { is_show_menu, is_show_search,   is_up_menu } = header;
   const [y, setY] = useState(0);
   const dispatch = useDispatch();
   const [isTransparentBG, setIsTransparentBG] = useState(true);
+
 
   //annimate show menu
   const [moveUpMenu, setMoveUpMenu] = useState(false);
@@ -72,18 +74,22 @@ export default function Header() {
    * Annimate menu show
    */
   const closeMenu = () => {
-    setMoveUpMenu(true);
-    setTimeout(() => {
+  
+    dispatch( setIsUpMenu(true));
+
       dispatch(setIsShowMenu(false));
-    }, 600);
+
   };
   const openMenu = () => {
-    setMoveUpMenu(true);
+
+    
     dispatch(setIsShowMenu(true));
-    setTimeout(() => {
-      setMoveUpMenu(false);
-    }, 100);
+
+      dispatch( setIsUpMenu(false));
+
   };
+
+
 
   return (
     <div
@@ -91,6 +97,19 @@ export default function Header() {
         " "
       )}
     >
+      <div className={[styles.burgerbtn_wrapper, is_up_menu ? styles.show_burger_icon :  styles.show_close_icon].join(" ")}
+        onClick={(e) =>{ handleClickMenu(e)}}
+      >
+        <img 
+          className={[styles.icon_menu, styles.burger_icon].join(" ")}
+          src={'/burger-menu.svg'} 
+        />
+        <img 
+          className={[styles.icon_menu, styles.close_icon].join(" ")}
+          src={'/close.svg'} 
+        />
+
+      </div>
       <div className={styles.global_content}>
         <div className={styles.logo_wrapper}>
         <img className={styles.logo} src='/logo-white.svg'
@@ -98,7 +117,7 @@ export default function Header() {
         />
         </div>
         
-        <div className={styles.subMenu_wrapper}>
+        <div className={[styles.subMenu_wrapper, is_up_menu ? styles.is_up :styles.is_down  ].join(" ")}>
           <SubMenu />
         </div>
       </div>
