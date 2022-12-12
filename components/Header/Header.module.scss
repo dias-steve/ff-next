@@ -1,3 +1,36 @@
-.global_container{
+@import '../../styles/variables.scss';
 
+.global_container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+ 
+    position: fixed;
+    top: 0;
+    transition: 300ms;
+    transform: translateY(-150%);
+    z-index:10;
+    background-color: $primary-color-orange;
+    height: 60px;
+    &.isShow{
+        transform: translateY(0);
+    }
+
+    &.transparent_bg{
+        background-color: transparent !important;
+    }
+    .global_content{
+        max-width: $content-max-width;
+        padding: 0px $content-side-padding;
+        width: 100%;
+        display: flex;
+        
+        align-items: center;
+
+        .subMenu_wrapper{
+            flex: 1;
+            margin-left: 10px;
+        }
+
+    }
 }

@@ -1,11 +1,19 @@
 import Container from '../components/Container/Container.js';
+
+import { wrapper, store, persistor } from "../redux/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Container>
-      <Component {...pageProps} />
-    </Container>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Container>
+          <Component {...pageProps} />
+        </Container>
+      </PersistGate>
+    </Provider>
   )
 }
 

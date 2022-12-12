@@ -14,7 +14,7 @@ export default function Home(props) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={seo.meta_description_seo} />
       </Head>
-    <div className={styles.container}>
+    <div className={styles.global_container}>
       <BlocSectionManager content = {content} />
     </div>
     </div>

@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+.global_container{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .sub_second_btn_wrapper{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.sub_btn_global_container{
+    cursor: pointer;
+    padding: 0 10px;
+    
+    .sub_btn_label{
+        font-family: $font-family-title;
+        font-size: 0.8rem;
+        color: white;
+        font-weight: 200;
+    }
+
+    &:hover{
+        color: white;
+        text-decoration: underline;
+
+    }
+}
