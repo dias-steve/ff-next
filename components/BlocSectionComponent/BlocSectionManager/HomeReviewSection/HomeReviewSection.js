@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './HomeReviewSection.module.scss';
 import ImageBloc from './../../../ImageBloc/ImageBloc.js';
-
+import { v4 as uuidv4 } from 'uuid';
 
 
 export const SingleReview = ({image, name, paragraph}) => {
@@ -30,6 +30,7 @@ export default function HomeReviewSection({content}) {
                     { reviews_list && Array.isArray(reviews_list) && reviews_list.length > 0 &&
                         reviews_list.map( review => (
                             <SingleReview 
+                                key={uuidv4()}
                                 name={review.title}
                                 image = {review.thumbnail}
                                 paragraph = {review.content}/>                        
