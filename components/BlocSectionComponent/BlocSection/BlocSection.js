@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroHomeSection from '../BlocSectionManager/HeroHomeSection/HeroHomeSection';
+import HomeSpeechSection from '../BlocSectionManager/HomeSpeech/HomeSpeechSection';
 import styles from './BlocSection.module.scss';
 
 // hero : Hero
@@ -15,7 +16,7 @@ export default function BlocSection({data}) {
         return <HeroHomeSection content={data}/>
 
     case 'speech':
-      return <div> speech </div>
+      return <HomeSpeechSection content={data}/>
 
     case 'paragraph-2':
       return 
