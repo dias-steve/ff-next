@@ -9,7 +9,7 @@ $break_point: 700px;
     background-color: $primary-color-blue;
 
     .global_content{
-        min-height: clamp(600px, 100vh, 1000px);
+        min-height: clamp(500px, 100vh, 1300px);
         @media screen and (min-width: $break_point) {
             display: grid;
             grid-template-columns: repeat(3, 1fr);

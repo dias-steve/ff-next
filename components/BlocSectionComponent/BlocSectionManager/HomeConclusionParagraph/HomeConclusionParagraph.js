@@ -6,7 +6,7 @@ import styles from './HomeConclusionParagraph.module.scss';
 export default function HomeConclusionParagraph({content}) {
 
   const {title_1, paragraph_1, image_1, btn_label_1, btn_label_2} = content
-  console.log(content);
+
 
   return (
     <div className={styles.global_container}>

@@ -34,16 +34,15 @@ const BtnContent = ({label}) => {
 
 export default function HomePathSection({content}) {
   const {step_list, btn_label_1} = content;
-  let counter = 0;
-  
-  console.log(content);
+
+
   return (
     <div className={styles.global_container}>
       <div className={styles.global_content}>
         {step_list && Array.isArray(step_list) && step_list.length > 0 &&
         <>
           {step_list.map(step => {
-            counter++;
+         
             return (
             <div className={[styles.tuile_container].join( " ")}  key= {uuidv4()}>
               <PathCard contentData={step}/>

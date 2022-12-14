@@ -3,6 +3,7 @@ import HeroHomeSection from '../BlocSectionManager/HeroHomeSection/HeroHomeSecti
 import HomeConclusionParagraph from '../BlocSectionManager/HomeConclusionParagraph/HomeConclusionParagraph';
 import HomeParagraph1Section from '../BlocSectionManager/HomeParagraph1Section/HomeParagraph1Section';
 import HomePathSection from '../BlocSectionManager/HomePathSection/HomePathSection';
+import HomeReviewSection from '../BlocSectionManager/HomeReviewSection/HomeReviewSection';
 import HomeSpeechSection from '../BlocSectionManager/HomeSpeech/HomeSpeechSection';
 import styles from './BlocSection.module.scss';
 
@@ -28,7 +29,7 @@ export default function BlocSection({data}) {
       return <HomeParagraph1Section content={data} />
     
     case 'review':
-      return
+      return <HomeReviewSection content={data} />
 
     case 'path':
       return <HomePathSection content={data} />
