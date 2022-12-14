@@ -1,5 +1,8 @@
 import React from 'react';
 import HeroHomeSection from '../BlocSectionManager/HeroHomeSection/HeroHomeSection';
+import HomeConclusionParagraph from '../BlocSectionManager/HomeConclusionParagraph/HomeConclusionParagraph';
+import HomeParagraph1Section from '../BlocSectionManager/HomeParagraph1Section/HomeParagraph1Section';
+import HomePathSection from '../BlocSectionManager/HomePathSection/HomePathSection';
 import HomeSpeechSection from '../BlocSectionManager/HomeSpeech/HomeSpeechSection';
 import styles from './BlocSection.module.scss';
 
@@ -19,16 +22,16 @@ export default function BlocSection({data}) {
       return <HomeSpeechSection content={data}/>
 
     case 'paragraph-2':
-      return 
+      return <HomeConclusionParagraph content={data} />
 
     case 'paragraph-1':
-      return 
+      return <HomeParagraph1Section content={data} />
     
     case 'review':
-      return 
+      return
 
     case 'path':
-      return 
+      return <HomePathSection content={data} />
     default:
       return <p> components type not found </p>
   }

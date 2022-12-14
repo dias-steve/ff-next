@@ -1,0 +1,170 @@
+@import '../../../../styles/variables.scss';
+$break_point: 700px;
+.global_container {
+    background-color: $primary-color-blue;
+
+    .global_content{
+
+        
+        @media screen and (min-width: $break_point) {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 100vw;
+        }
+      
+    }
+}
+
+.tuile_container{
+  
+    @media screen and (min-width: $break_point) {
+        
+        width: 33.33vw;
+        height: 23vw;
+    }
+}
+
+
+
+.pathcard_global_container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: 300ms;
+    &:hover{
+        .background{
+            opacity: 0 !important;
+            transition: 300ms;
+        }
+        .number{
+            color: $primary-color-orange !important;
+        }
+
+        .image_wrapper{
+            scale: 1.1;
+        }
+
+    }
+    .image_wrapper{
+       
+        background-color: $primary-color-blue;
+        width: 100vw;
+        height: 70vw;
+        transition: 300ms;
+        @media screen and (min-width: $break_point) {
+            width: 33.33vw;
+            height: 23vw;
+        }
+    }
+
+    .content_container{
+        .background{
+            position: absolute;
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+            background-color: $primary-color-blue;
+            opacity: 0.6;
+            transition: 300ms;
+            
+        }
+        height: 100%;
+        width: 100%;
+       
+        position: absolute;
+
+        .number, .title{
+            position: relative;
+            z-index: 3;
+            transition: 300ms;
+        }
+        .number{
+
+            font-size: clamp(50px, 15vw, 150px);
+            line-height: clamp(50px, 15vw, 150px);
+            background-color: white;
+            padding: 10px;
+            margin: 0;
+            color: $primary-color-blue;
+
+            @media screen and (min-width: $break_point) {
+                font-size: clamp(50px, 5vw, 150px);
+                line-height: clamp(50px, 5vw, 150px);
+            }
+         
+          
+        }
+
+        .title{
+            position: absolute;
+            color: white;
+            right:0;
+            bottom: 0;
+            font-weight: 300;
+            font-family: $font-family-title;
+            font-size: clamp(50px, 15vw, 150px);
+            line-height: clamp(50px, 15vw, 150px);
+            padding: 10px;
+            margin: 0;
+
+            @media screen and (min-width: $break_point) {
+                font-size: clamp(50px, 5vw, 150px);
+                line-height: clamp(50px, 5vw, 150px);
+            }
+        }
+    }
+
+}
+
+
+.btn_more_wrapper{
+    width: 100vw;
+    height: 70vw;
+    transition: 300ms;
+    @media screen and (min-width: $break_point) {
+        width: 33.33vw;
+        height: 23vw;
+    }
+    display: flex;
+  
+    align-items: flex-end;
+    
+    &:hover{
+        background-color: $primary-color-orange;
+        .arrow_icon{
+        transform: translateX(0%);
+        }
+    }
+}
+.btn_global_container{
+    display: flex;
+
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+
+    .label{
+        font-size: clamp(20px, 3vw, 70px);
+        font-family: $font-family-body;
+        padding: 0 0 10px 0;
+        margin: 0;
+        color: white;
+
+        @media screen and (max-width: $break_point) {
+            font-size: clamp(20px, 10vw, 70px);
+        }
+        
+    }
+    .arrow_icon{
+        width: clamp(40px, 4vw, 70px);
+        margin-left: 10px;
+        transition: 300ms;
+        transform: translateX(-50%);
+        filter:  brightness(0) invert(1);
+    }
+
+
+
+
+}

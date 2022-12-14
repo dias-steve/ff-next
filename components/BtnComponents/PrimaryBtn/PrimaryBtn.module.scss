@@ -12,6 +12,10 @@
     transition: 300ms;
 
     border: 3px solid transparent;
+
+    &.with_border{
+        border: 3px solid white !important;
+    }
     &.color_orange{
         background-color: $primary-color-orange !important;
         color: white !important;
@@ -21,6 +25,9 @@
 
             filter:  brightness(0) invert(1);
     
+        }
+        .label{
+            width: unset;
         }
         &:hover{
             border: 3px solid transparent !important;
@@ -49,6 +56,7 @@
         font-size: 0.8rem;
         font-weight: 500;
         transition: 300ms;
+        width: 60%;
         &.color_orange{
            color: $primary-color-orange;
         }
@@ -74,10 +82,11 @@
         }
     }
     .arrow_icon{
-        width: 20px;
+        width: 25px;
         margin-left: 10px;
-        transform: translateX(0%);
         transition: 300ms;
+        transform: translateX(0%);
+  
 
     }
 }

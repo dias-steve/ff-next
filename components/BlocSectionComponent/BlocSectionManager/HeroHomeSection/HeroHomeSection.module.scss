@@ -2,11 +2,14 @@
 
 $break_point: 700px;
 .global_container{
-    height: 100vh;
-    min-height: 600px;
+    position: relative;
+
+
+    
     background-color: $primary-color-blue;
 
     .global_content{
+        min-height: clamp(600px, 100vh, 1000px);
         @media screen and (min-width: $break_point) {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -90,6 +93,7 @@ $break_point: 700px;
         @media screen and (min-width: $break_point) {
             grid-column: 2;
             grid-row: 2;
+            height: 100%;
    
         }
         .description_title{

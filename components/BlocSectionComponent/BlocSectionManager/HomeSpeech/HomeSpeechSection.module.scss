@@ -1,3 +1,45 @@
+@import '../../../../styles/variables.scss';
 .global_container{
-    
+    position: relative;
+    min-height: 500px;
+    padding: 9% 0;
+    .global_content{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title, .paragraph > p, .paragraph > * {
+            margin: 3% 0;
+            padding:0 ;
+            text-align: center;
+        }
+        .title{
+            font-size: clamp(20px, 10vw, 80px);
+            font-family: $font-family-title;
+            font-weight: 400;
+            margin: 20px 0;
+        }
+
+        .paragraph{
+            max-width: 600px;
+            p{
+                font-size: 1.3rem;
+                line-height: 2rem;
+                font-weight: 300;
+            }
+
+            h4{
+                margin-top: 30px;
+                font-size: 1rem;
+                font-weight: 300;
+                
+            }
+
+        }
+
+        .btn_wrapper{
+            margin: 40px 0;
+        }
+    }
 }

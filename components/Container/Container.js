@@ -5,9 +5,9 @@ import Header from '../Header/Header.js'
 export default function container(props) {
   return (
    <>
-     <Header/>
+      <Header/>
         {props.children}
-    <Footer/>
+      <Footer/>
    </>
   )
 }

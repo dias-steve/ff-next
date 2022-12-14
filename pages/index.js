@@ -8,16 +8,16 @@ export default function Home(props) {
   const {seo, content }= props.homeData; 
   
   return (
-    <div>
+    <>
       <Head>
         <title>{seo.title_seo}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={seo.meta_description_seo} />
       </Head>
-    <div className={styles.global_container}>
-      <BlocSectionManager content = {content} />
-    </div>
-    </div>
+      <div className={styles.global_container}>
+        <BlocSectionManager content = {content} />
+      </div>
+    </>
   )
 }
 

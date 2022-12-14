@@ -1,46 +1,23 @@
 import React from 'react';
+import SecondaryBtn from '../../../BtnComponents/SecondaryBtn/SecondaryBtn';
 import styles from './HomeSpeechSection.module.scss';
-export default function HomeSpeechSection({content, homeData}) {
-    console.log(homeData);
+export default function HomeSpeechSection({content}) {
+
+  const {title_1, paragraph_1, btn_label_1} = content;
+
   return (
     <div className={styles.global_container}>
-      test
+      <div className={styles.global_content}>
+        <h1 className= {styles.title} dangerouslySetInnerHTML={{__html:title_1}}/>
+        <div className= {styles.paragraph} dangerouslySetInnerHTML={{__html:paragraph_1}}/>
+        {btn_label_1 && btn_label_1 !== ""}
+        <div className={styles.btn_wrapper}>
+          <SecondaryBtn label={btn_label_1} link={'/about'} />
+        </div>
+
+      </div>
     </div>
   )
 }
 
-export async function getStaticProps() {
-    const data = await fetch(process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/homepage", {
-      // Adding method type
-      method: "GET",
-  
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-  
-  
-  
-    const generalSettingsRaw = await fetch(process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/settings", {
-      // Adding method type
-      method: "GET",
-  
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-  
-    const generalSettings = await generalSettingsRaw.json();
-    const homeData = await data.json();
-  
-  
-    return {
-      props: {
-        homeData,
-        generalSettings,
-      },
-      revalidate: 60, // rechargement toutes les 10s
-    };
-  }
+
