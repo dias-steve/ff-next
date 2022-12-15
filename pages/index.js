@@ -1,9 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import BlocSection from '../components/BlocSectionComponent/BlocSection/BlocSection'
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import gsap from "gsap/dist/gsap";
+
+
+
+
 import BlocSectionManager from '../components/BlocSectionComponent/BlocSectionManager/BlocSectionManager'
 import styles from '../styles/Home.module.scss'
 
+
+gsap.registerPlugin(ScrollTrigger);
 export default function Home(props) {
   const {seo, content }= props.homeData; 
   
@@ -15,7 +22,8 @@ export default function Home(props) {
         <meta name="description" content={seo.meta_description_seo} />
       </Head>
       <div className={styles.global_container}>
-        <BlocSectionManager content = {content} />
+  
+        <BlocSectionManager gsap={gsap} content = {content} />
       </div>
     </>
   )

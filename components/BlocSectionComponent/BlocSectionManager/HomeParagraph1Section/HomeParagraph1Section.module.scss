@@ -13,6 +13,7 @@ $break_point: 700px;
 
     color: white;
     padding-bottom: 30%;
+    overflow: hidden;
 
     @media screen and (min-width: $break_point) {
         padding-bottom: 10%;
@@ -38,12 +39,12 @@ $break_point: 700px;
         
         }
         .image_1_container{
-
+            overflow: hidden;
             height: 90vw;
             width: 70vw;
             right: 0;
             margin-left: 30%;
-            transition: 300ms;
+         
             @media screen and (min-width: 1300px) {
                 margin-top: 20%;
             }
@@ -57,6 +58,7 @@ $break_point: 700px;
                 grid-column: 3;
 
                 &.image_2_container{
+
                     grid-column: 1 !important;
                     width: 100% !important;
                     height: 80% !important;
@@ -74,6 +76,7 @@ $break_point: 700px;
         .paragraph_1_container{
             padding: 0 20px;
             margin-top: 10% ;
+            z-index: 2;
 
             @media screen and (min-width: $break_point) {
                 grid-column: 1 / 3;

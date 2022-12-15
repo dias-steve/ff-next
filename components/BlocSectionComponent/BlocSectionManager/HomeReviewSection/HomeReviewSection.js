@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import styles from './HomeReviewSection.module.scss';
 import ImageBloc from './../../../ImageBloc/ImageBloc.js';
 import { v4 as uuidv4 } from 'uuid';
@@ -16,17 +16,95 @@ export const SingleReview = ({image, name, paragraph}) => {
         </div>
     )
 }
-export default function HomeReviewSection({content}) {
+export default function HomeReviewSection({content, gsap}) {
     const { title_2, reviews_list} = content;
-    console.log(reviews_list);
+    
+
+    /**Anniamtion */
+    const trackWrapperRef = useRef(null);
+    const listContainerRef = useRef(null);
+    const globalContainerRef = useRef(null);
+    const titleRef = useRef(null);
+    if(true){
+    useEffect(()=> {
+
+        const eltrackWrapper   = trackWrapperRef.current;
+        const ellistContainer = listContainerRef.current;
+        const elglobalContainerRef = globalContainerRef.current;
+   
+        gsap
+        .to(eltrackWrapper ,
+          {        
+            
+
+            ease: "none", 
+            x: "-1050",
+      
+         
+            scrollTrigger:{
+                trigger:eltrackWrapper ,
+
+                scrub: 0.1,
+              start: 'center center',
+              end: "center -30%",
+           
+              toggleActions: "restart none none none",
+                
+    
+          
+               
+              
+            }
+     
+        })
+      },[])
+
+      useEffect(() => {
+        const elTitle = titleRef.current;
+        const eltrackWrapper   = trackWrapperRef.current;
+        gsap.timeline(       
+            {scrollTrigger:{
+              trigger: elTitle,
+              start: "start 80%",
+              end: "50% 50%",
+              toggleActions: "restart none reverse none",
+    
+        
+              
+          }}).fromTo( elTitle,
+            {
+              duration: 0.3,
+              opacity: 0,
+              stagger: 0.5,
+              delay: 0.2
+
+      
+            },        {
+              duration: 0.3,
+              opacity: 1,
+        
+      
+            }).fromTo( eltrackWrapper,
+                {
+                    opacity: 0,
+    
+          
+                },        {
+                    opacity: 1,
+          
+                })
+
+      }, [])
+    }
+
   return (
-    <div className={styles.global_container}>
-        <div className={styles.global_content}>
+    <div ref={globalContainerRef}  className={styles.global_container}>
+        <div  className={styles.global_content}>
 
-            <div className={styles.title} dangerouslySetInnerHTML={{__html: title_2}}/>
+            <div  ref={titleRef}  className={styles.title} dangerouslySetInnerHTML={{__html: title_2}}/>
 
-            <div className={styles.reviews_list_container}>
-                <div className={styles.reviews_list_tracks}>
+            <div ref={listContainerRef}  className={styles.reviews_list_container}>
+                <div ref={trackWrapperRef} className={styles.reviews_list_tracks}>
                     { reviews_list && Array.isArray(reviews_list) && reviews_list.length > 0 &&
                         reviews_list.map( review => (
                             <SingleReview 

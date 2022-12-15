@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from './ImageBloc.module.scss';
+import {motion, useScroll, useTransform} from 'framer-motion';
 export default function ImageBloc({image}) {
+
     const {url, alt} = image;
   return (
-        <div className={styles.image_wrapper}>
+        <div 
+
+        className={styles.image_wrapper}>
           {url &&
             <Image
                 className={styles.image}

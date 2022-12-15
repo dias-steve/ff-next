@@ -4,7 +4,7 @@
 
     display: flex;
     .global_content{
-
+        height: 2000px;
         .title{
             display: flex;
             text-align: center;
@@ -25,9 +25,17 @@
             }
         }
 
+       
         .reviews_list_container{
+            position: sticky !important;
+            position: -webkit-sticky !important;
             width: 100vw;
             overflow: hidden;
+    
+    
+      
+            top: 15%;
+
 
             .reviews_list_tracks{
                 display: flex;

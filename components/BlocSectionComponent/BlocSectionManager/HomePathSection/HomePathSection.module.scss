@@ -32,6 +32,8 @@ $break_point: 700px;
     position: relative;
     overflow: hidden;
     transition: 300ms;
+
+    @media screen and (min-width: $break_point) {
     &:hover{
         .background{
             opacity: 0 !important;
@@ -46,6 +48,7 @@ $break_point: 700px;
         }
 
     }
+}
     .image_wrapper{
        
         background-color: $primary-color-blue;
@@ -67,6 +70,9 @@ $break_point: 700px;
             background-color: $primary-color-blue;
             opacity: 0.6;
             transition: 300ms;
+            @media screen and (max-width: $break_point) {
+                transition: 000ms;
+            }
             
         }
         height: 100%;
