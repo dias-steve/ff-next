@@ -25,7 +25,7 @@ export default function HomeReviewSection({content, gsap}) {
     const listContainerRef = useRef(null);
     const globalContainerRef = useRef(null);
     const titleRef = useRef(null);
-    if(true){
+    
     useEffect(()=> {
 
         const eltrackWrapper   = trackWrapperRef.current;
@@ -95,7 +95,7 @@ export default function HomeReviewSection({content, gsap}) {
                 })
 
       }, [])
-    }
+    
 
   return (
     <div ref={globalContainerRef}  className={styles.global_container}>
