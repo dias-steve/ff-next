@@ -18,13 +18,22 @@ export const SingleReview = ({image, name, paragraph}) => {
 }
 export default function HomeReviewSection({content, gsap}) {
     const { title_2, reviews_list} = content;
-    
+    const nbReviews =  reviews_list && Array.isArray(reviews_list) ? reviews_list.length : 0;
+
+    const height_list = nbReviews*550;
+    const x = (nbReviews*262)-50;
+
+    const styles_list = {
+        height: height_list
+    }
 
     /**Anniamtion */
     const trackWrapperRef = useRef(null);
     const listContainerRef = useRef(null);
     const globalContainerRef = useRef(null);
     const titleRef = useRef(null);
+
+    
     
     const widthScreen = getWitdthScreen();
     const isMobile =  widthScreen <= 700 ? true : false;
@@ -40,7 +49,7 @@ export default function HomeReviewSection({content, gsap}) {
             
 
             ease: "none", 
-            x: "-1050",
+            x: "-"+x,
       
          
             scrollTrigger:{
@@ -103,7 +112,7 @@ export default function HomeReviewSection({content, gsap}) {
 
   return (
     <div ref={globalContainerRef}  className={styles.global_container}>
-        <div  className={styles.global_content}>
+        <div style={styles_list} className={styles.global_content}>
 
             <div  ref={titleRef}  className={styles.title} dangerouslySetInnerHTML={{__html: title_2}}/>
 
