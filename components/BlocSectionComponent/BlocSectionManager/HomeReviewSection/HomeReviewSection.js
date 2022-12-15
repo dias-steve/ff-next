@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import styles from './HomeReviewSection.module.scss';
 import ImageBloc from './../../../ImageBloc/ImageBloc.js';
 import { v4 as uuidv4 } from 'uuid';
-
+import useDeviceDetect,{ getWitdthScreen } from "../../../../hooks/useDeviceDectect";
 
 export const SingleReview = ({image, name, paragraph}) => {
 
@@ -26,6 +26,8 @@ export default function HomeReviewSection({content, gsap}) {
     const globalContainerRef = useRef(null);
     const titleRef = useRef(null);
     
+    const widthScreen = getWitdthScreen();
+    const isMobile =  widthScreen <= 700 ? true : false;
     useEffect(()=> {
 
         const eltrackWrapper   = trackWrapperRef.current;
@@ -60,6 +62,7 @@ export default function HomeReviewSection({content, gsap}) {
       },[])
 
       useEffect(() => {
+        if(!isMobile){
         const elTitle = titleRef.current;
         const eltrackWrapper   = trackWrapperRef.current;
         gsap.timeline(       
@@ -93,6 +96,7 @@ export default function HomeReviewSection({content, gsap}) {
                     opacity: 1,
           
                 })
+            }
 
       }, [])
     

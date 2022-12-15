@@ -4,7 +4,7 @@
 
     display: flex;
     .global_content{
-        height: 2000px;
+        height: 2200px;
         .title{
             display: flex;
             text-align: center;
@@ -31,7 +31,11 @@
             position: -webkit-sticky !important;
             width: 100vw;
             overflow: hidden;
-    
+            @media screen and (max-width: 600px) {
+                
+            
+                top: 0%;
+            }
     
       
             top: 15%;
@@ -41,6 +45,9 @@
                 display: flex;
                 width: fit-content;
                 padding-left: 15vw;
+                @media screen and (max-width: 600px) {
+                    padding-left: 1vw;
+                }
             }
 
         }
