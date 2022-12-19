@@ -7,7 +7,7 @@ export default function container(props) {
    <>
       <Header/>
         {props.children}
-      <Footer/>
+      <Footer logo={{url:'/logo-dark-green.svg', alt:'Logo'}}/>
    </>
   )
 }

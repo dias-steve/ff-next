@@ -2,17 +2,28 @@ import Head from 'next/head'
 import Image from 'next/image'
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap from "gsap/dist/gsap";
-
+import { useDispatch, useSelector } from "react-redux";
 
 
 
 import BlocSectionManager from '../components/BlocSectionComponent/BlocSectionManager/BlocSectionManager'
 import styles from '../styles/Home.module.scss'
+import { initializePage } from '../utils/global.utils';
+import { useEffect } from 'react';
 
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Home(props) {
   const {seo, content }= props.homeData; 
+  const generalSettings = props.generalSettings
+  const dispatch = useDispatch();
+
+  /**
+   * Initializing of the page
+   */
+  useEffect(() => {
+    initializePage(dispatch, generalSettings);
+  },[])
   
   return (
     <>
