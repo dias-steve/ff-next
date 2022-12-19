@@ -50,18 +50,20 @@ const mapState = (state) => ({
 export default function Footer({logo}) {
   const { footerData } = useSelector(mapState);
   const { footer_menu_list, copyright } = footerData;
-  console.log(footer_menu_list);
+
   return (
     <div className={styles.global_container}>
       <div className={styles.global_content}>
         <div className={[styles.section_wrapper].join(" ")}>
           {logo?.url &&
+          <Link href={'/'}>
           <img
             src={logo.url}
             alt={logo.alt}
             className={styles.image}
             key={uuidv4()}
           />
+          </Link>
           }
         </div>
         <div className={[styles.section_wrapper].join(" ")}>

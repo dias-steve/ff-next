@@ -1,0 +1,83 @@
+@import "../../../../styles/variables.scss";
+
+$break_point : 700px;
+.global_content{
+
+    @media screen and (min-width:$break_point) {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        min-height: 500px;
+
+
+    }
+    .image_wrapper{
+        height: 100vw;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        @media screen and (min-width:$break_point) {
+            grid-column: 2;
+            grid-row: 1;
+            height: 100%;
+            width: 100%;
+        }
+    
+    }
+    .paragraph_container{
+        background-color: $primary-color-blue;
+        color: white;
+        padding: clamp(60px, 15%, 300px) 20px;
+        margin: 0;
+        .title, .paragraph{
+            padding: 0;
+            margin: 0;
+        }
+
+        .title{
+            font-family: $font-family-title;
+            font-size: clamp(30px, 8vw, 100px);
+            font-weight: 300;
+            line-height: clamp(30px, 8vw, 100px);
+
+        }
+     
+
+        .paragraph{
+            font-family: $font-family-body;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            font-weight: 300;
+        }
+
+        .address_container{
+            margin-top: 60px;
+            .title_address{
+                font-size: 1.5rem;
+                font-weight: 300;
+            }
+            .address{
+                font-size: 1rem;
+                font-weight: 300;
+            }
+            
+        }
+
+
+    .btn_wrapper{
+        margin-top: 60px;
+        .item_btn_wrapper{
+           margin: 30px 0;
+           height: 60px;
+           max-width: 350px;
+        }
+
+       }
+    }
+
+
+
+
+
+}

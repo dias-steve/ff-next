@@ -5,7 +5,7 @@ import SecondaryBtn from '../../../BtnComponents/SecondaryBtn/SecondaryBtn';
 
 import styles from './HeroHomeSection.module.scss'
 
-export default function HeroHomeSection({content, gsap}) {
+export default function HeroHomeSection({content, gsap, forParcours}) {
 
     const BtnContent = ({label}) => {
         return <div className={styles.btn_global_container}>
@@ -73,8 +73,8 @@ export default function HeroHomeSection({content, gsap}) {
   return (
     <div className={styles.global_container}>
     
-        <div className={styles.global_content}>
-            <div className={[styles.grid_container, styles.big_image_containter].join(" ")}>
+        <div className={[styles.global_content, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
+            <div className={[styles.grid_container, styles.big_image_containter, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
                 {image_1 && image_1?.url &&
                 <div
                 ref= {imageRef}
@@ -88,9 +88,14 @@ export default function HeroHomeSection({content, gsap}) {
                 </div>
                 }
             </div>
-            <div className={[styles.grid_container, styles.title_container].join(" ")}>
-                <h1 className={styles.title} dangerouslySetInnerHTML={{__html: title_1}}/>    
+            <div className={[styles.grid_container, styles.title_container, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
+                <h1 className={styles.title} dangerouslySetInnerHTML={{__html: title_1}}/> 
+                {forParcours &&
+                     <p className={styles.description_paragraph} dangerouslySetInnerHTML={{__html:paragraph_1}}/>
+                }   
             </div>
+            {!forParcours &&
+            <>
             <div ref ={descriptionBlocRef} className={[styles.grid_container, styles.decription_container].join(" ")}>
                 <Link className={styles.link} href={'https://www.google.fr'}>
                 <h2 className={styles.description_title} dangerouslySetInnerHTML={{__html: title_3}}/> 
@@ -101,7 +106,8 @@ export default function HeroHomeSection({content, gsap}) {
                 />
                 </Link>
             </div>
-            <div className={[styles.grid_container, styles.tiny_image_container].join(" ")}>
+            
+            <div className={[styles.grid_container, styles.tiny_image_container, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
             {image_2 && image_1?.url &&
                 <div ref= {imageRef2} className={styles.image_wrapper}>
                     <Image 
@@ -113,6 +119,9 @@ export default function HeroHomeSection({content, gsap}) {
                 </div>
             }
             </div>
+            </>
+            }
+
         </div>
  
     </div>

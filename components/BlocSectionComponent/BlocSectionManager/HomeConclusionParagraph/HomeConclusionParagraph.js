@@ -11,7 +11,7 @@ export default function HomeConclusionParagraph({content, gsap}) {
   const imageRef = useRef(null);
   useEffect(() => {
     const elImage = imageRef.current;
-    console.log(elImage)
+
 
     gsap.timeline(       
       {scrollTrigger:{

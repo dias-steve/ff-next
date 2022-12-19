@@ -6,12 +6,35 @@ $break_point: 700px;
     display: flex;
     justify-content: center;
     background-color: $primary-color-brown;
+
+    &.color_orange{
+        background-color: $primary-color-orange !important;
+        color: white !important;
+    }
+    &.color_blue{
+        background-color: $primary-color-blue !important;
+        color: white !important;
+    }
+    &.color_brown{
+        background-color: $primary-color-brown !important;
+        color: white !important;
+    }
+
+    &.color_darkgreen{
+        background-color: $primary-color-brown !important;
+        color: white !important;
+    }
+    &.color_white{
+        background-color: white!important;
+        color: $secondary-color-dark-green !important;
+
+    }
 }
 .global_content{
     width: 100%;
     max-width: 1300px;
 
-    color: white;
+   
     padding-bottom: 30%;
     overflow: hidden;
 

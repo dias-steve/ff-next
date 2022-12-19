@@ -21,8 +21,11 @@ export const colorConverterCSS = (color, styles) => {
             return styles.color_brown;
         case 'darkgreen':
             return styles.color_darkgreen;
+        case 'white':
+            return styles.color_white;
         default:
             return styles.color_darkgreen;
+
     }
 }
 

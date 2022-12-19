@@ -1,0 +1,107 @@
+@import "../../../../styles/variables.scss";
+
+$break-point-1: 600px;
+.global_container{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .global_content{
+
+    }
+    .single_step_container{
+        @media screen and (min-width: $break-point-1) {
+            width: 100%;
+            position: sticky;
+            top:0;
+            display: flex;
+            flex-direction: row-reverse;
+  
+        }
+    }
+    .image_container{
+          position: relative;
+          @media screen and (min-width: $break-point-1) {
+            margin: 0;
+            padding: 0;
+
+          }
+        .image_wrapper{
+            @media screen and (min-width: $break-point-1) {
+                width: 50vw;
+                height: 100vh;
+                max-width: 650px;
+                margin: 0;
+                padding: 0;
+            }
+            width: 100vw;
+            height: 120vW;
+        }
+
+        .step_number{
+            position: absolute;
+            z-index: 2;
+            background-color: white;
+            top: 0;
+            right:0;
+            font-size: clamp(30px, 20vw, 150px);
+            padding: 10px 5px;
+
+        }
+
+    }
+
+    .paragraph_container{
+        padding: clamp(50px, 10%, 100px) 20px;
+        background-color: white;
+        @media screen and (min-width: $break-point-1) {
+            padding: 8%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50vw;
+            max-width: 650px;
+
+
+        }
+
+        .title, .paragraph{
+            position: relative;
+            z-index: 4;
+            max-width: 400px;
+            margin: 0;
+            padding: 0;
+            @media screen and (min-width: $break-point-1) {
+                max-width: unset;
+              
+            
+            }
+
+        }
+        .title{
+
+            @media screen and (min-width: $break-point-1) {
+                font-size: clamp(50px, 8vw, 80px);
+              
+            
+            }        
+            font-size: clamp(50px, 16vw, 100px);
+            font-weight: 300;
+            font-family: $font-family-title;
+            margin-bottom: clamp(10px, 5%, 60px);
+        }
+        .paragraph{
+            h2{
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+            ul{
+                font-size: 1rem;
+                line-height: 1.8rem;
+                font-weight: 300;
+            }
+        }
+    }
+}

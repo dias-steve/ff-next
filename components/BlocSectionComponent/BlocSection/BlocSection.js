@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactBloc from '../BlocSectionManager/ContactBloc/ContactBloc';
 
 import HeroHomeSection from '../BlocSectionManager/HeroHomeSection/HeroHomeSection';
 import HomeConclusionParagraph from '../BlocSectionManager/HomeConclusionParagraph/HomeConclusionParagraph';
@@ -6,6 +7,7 @@ import HomeParagraph1Section from '../BlocSectionManager/HomeParagraph1Section/H
 import HomePathSection from '../BlocSectionManager/HomePathSection/HomePathSection';
 import HomeReviewSection from '../BlocSectionManager/HomeReviewSection/HomeReviewSection';
 import HomeSpeechSection from '../BlocSectionManager/HomeSpeech/HomeSpeechSection';
+import PathDetailled from '../BlocSectionManager/PathDetailled/PathDetailled';
 import styles from './BlocSection.module.scss';
 
 // hero : Hero
@@ -14,11 +16,11 @@ import styles from './BlocSection.module.scss';
 // review : Avis client
 // paragraph-2 : Paragraphe de conculsion
 // path : Parcours
-export default function BlocSection({data, gsap}) {
+export default function BlocSection({data, gsap, forParcours}) {
 
   switch (data.bloc_type) {
     case 'hero':
-        return <HeroHomeSection content={data} gsap={gsap}/>
+        return <HeroHomeSection forParcours={forParcours} content={data} gsap={gsap}/>
 
     case 'speech':
       return <HomeSpeechSection content={data} gsap={gsap}/>
@@ -34,6 +36,10 @@ export default function BlocSection({data, gsap}) {
 
     case 'path':
       return <HomePathSection content={data} gsap={gsap} />
+    case 'path-detailed':
+      return <PathDetailled content={data} gsap={gsap}/>
+      case 'contact-details':
+        return <ContactBloc content={data} gsap={gsap}/>
     default:
       return <p> components type not found </p>
   }

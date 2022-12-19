@@ -2,12 +2,13 @@ import React from 'react'
 import ImageBloc from '../../../ImageBloc/ImageBloc';
 import styles from './HomeParagraph1Section.module.scss';
 import {motion, useScroll, useTransform} from 'framer-motion';
+import { colorConverterCSS } from '../../../../utils/global.utils';
 export default function HomeParagraph1Section({content}) {
-  const {title_1, paragraph_1, image_1, image_2, title_3, paragraph_2,} = content
+  const {title_1, paragraph_1, image_1, image_2, title_3, paragraph_2, background_color} = content
   let {scrollYProgress} = useScroll();
   let y = useTransform(scrollYProgress, [0,1], ["-30%", "30%"])
   return (
-    <div className={styles.global_container}>
+    <div className={[styles.global_container, background_color ? colorConverterCSS(background_color,styles): styles.color_brown].join(" ")}>
     <div className= {styles.global_content}>
 
       <div className={styles.paragraph_1_section}>
@@ -21,7 +22,7 @@ export default function HomeParagraph1Section({content}) {
         </motion.div>
       </div>
 
-
+    { paragraph_2 && paragraph_2 !== "" && paragraph_2 !==" " &&
       <div className={[styles.paragraph_1_section, styles.paragraph_2_section].join(" ")}>
       <motion.div style= {{ y}} className={[styles.image_1_container , styles.image_2_container].join(" ")}>
           <ImageBloc image={image_2}/>
@@ -32,6 +33,7 @@ export default function HomeParagraph1Section({content}) {
         </div>
 
       </div>
+      }
 
     </div>
     </div>

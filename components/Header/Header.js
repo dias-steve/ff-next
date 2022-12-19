@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -111,11 +112,11 @@ export default function Header() {
 
       </div>
       <div className={styles.global_content}>
-        <div className={styles.logo_wrapper}>
+        <Link href='/' className={styles.logo_wrapper}>
         <img className={styles.logo} src='/logo-white.svg'
           alt= {'logo icon'}
         />
-        </div>
+        </Link>
         
         <div className={[styles.subMenu_wrapper, is_up_menu ? styles.is_up :styles.is_down  ].join(" ")}>
           <SubMenu />

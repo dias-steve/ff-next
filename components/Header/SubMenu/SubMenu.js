@@ -20,8 +20,8 @@ export default function SubMenu() {
   return (
     <div className={styles.global_container}>
         <div className={styles.sub_second_btn_wrapper}>
-            <SubBtn label= {'Nos Parcours'} link={'/'}/>
-            <SubBtn label={'Nous contacter'} link={'/'} />
+            <SubBtn label= {'Nos Parcours'} link={'/parcours'}/>
+            <SubBtn label={'Nous contacter'} link={'/contact'} />
         </div>
 
         <div className={styles.primarybtn_wrapper}>
