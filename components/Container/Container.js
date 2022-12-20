@@ -7,7 +7,7 @@ const mapState = (state) => ({
   auth: state.auth.auth,
 });
 
-export default function container(props) {
+export default function Container(props) {
   const generalSettings = props.children.props.generalSettings;
   const maintenanceMode = generalSettings
     ? generalSettings.maintenance_mode
