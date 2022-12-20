@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { v4 as uuidv4 } from 'uuid';
 
 import PrimaryBtn from '../../BtnComponents/PrimaryBtn/PrimaryBtn';
 
@@ -27,7 +28,7 @@ export default function SubMenu({menuItemsList}) {
                 menuItemsList && Array.isArray(menuItemsList) && menuItemsList.length > 0 &&
                 menuItemsList
                     .slice(0, 3)
-                    .map(menuItem => <SubBtn label={menuItem.name} link={menuItem.link} />)
+                    .map(menuItem => <SubBtn key={uuidv4()} label={menuItem.name} link={menuItem.link} />)
             }
 
         </div>
