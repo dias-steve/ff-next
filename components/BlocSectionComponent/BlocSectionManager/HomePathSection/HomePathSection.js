@@ -80,7 +80,7 @@ export const PathCard = ({contentData, gsap}) => {
  
   }, [])
 
-  return (<Link href={'/parcours/#step'+step_number} className={styles.pathcard_global_container}>
+  return (<Link href={'/parcours#step'+step_number} className={styles.pathcard_global_container}>
     <div ref= {imageRef} className={styles.image_wrapper}>
       <ImageBloc image={thumbnail} />
     </div>
@@ -105,11 +105,12 @@ const BtnContent = ({label}) => {
 }
 
 export default function HomePathSection({content, gsap}) {
-  const {step_list, btn_label_1} = content;
-
+  const {step_list, btn_label_1, btn_1_link, id_css} = content;
+  const optionsLink = btn_1_link?.startsWith('http') ? {target:'_blank'} : {}
+  const optionsSection = {id: id_css} || {};
 
   return (
-    <div className={styles.global_container}>
+    <div  {...optionsSection}className={styles.global_container}>
       <div className={styles.global_content}>
         {step_list && Array.isArray(step_list) && step_list.length > 0 &&
         <>
@@ -122,9 +123,11 @@ export default function HomePathSection({content, gsap}) {
           })}
 
             <div className={[styles.tuile_container, styles.tuile_btn].join( " ")}  key= {uuidv4()}>
-              <Link href = {'/'} className={styles.btn_more_wrapper}>
-                <BtnContent label={'En savoir sur <br/>les parcours'}/>
-              </Link>
+              {btn_1_link && btn_1_link !== "" && btn_1_link!== " " &&
+                <Link {...optionsLink} href = {'/parcours'} className={styles.btn_more_wrapper}>
+                  <BtnContent label={btn_label_1}/>
+                </Link>
+              }
             </div>
           </>
         }

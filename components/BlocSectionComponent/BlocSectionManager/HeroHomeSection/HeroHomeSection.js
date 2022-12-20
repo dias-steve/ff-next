@@ -21,10 +21,15 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
         image_1,
         image_2,
         btn_label_1,
+        btn_1_link,
         paragraph_1,
-        title_3
+        title_3,
+        id_css
     
     } = content; 
+
+    const optionsLink = btn_1_link?.startsWith('http') ? {target:'_blank'} : {}
+    const optionsSection = {id: id_css} || {};
 
     /**Annimation */
     const imageRef = useRef(null);
@@ -71,7 +76,7 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
     }, [])
 
   return (
-    <div className={styles.global_container}>
+    <div {...optionsSection} className={styles.global_container}>
     
         <div className={[styles.global_content, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
             <div className={[styles.grid_container, styles.big_image_containter, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
@@ -96,8 +101,9 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
             </div>
             {!forParcours &&
             <>
+            {  btn_1_link &&  btn_1_link!== "" &&  btn_1_link!== " " &&
             <div ref ={descriptionBlocRef} className={[styles.grid_container, styles.decription_container].join(" ")}>
-                <Link className={styles.link} href={'https://www.google.fr'}>
+                <Link {...optionsLink} className={styles.link} href={btn_1_link}>
                 <h2 className={styles.description_title} dangerouslySetInnerHTML={{__html: title_3}}/> 
                 <p className={styles.description_paragraph} dangerouslySetInnerHTML={{__html:paragraph_1}}/>
      
@@ -106,6 +112,7 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
                 />
                 </Link>
             </div>
+            }
             
             <div className={[styles.grid_container, styles.tiny_image_container, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
             {image_2 && image_1?.url &&

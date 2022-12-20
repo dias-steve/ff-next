@@ -1,0 +1,41 @@
+@import '../../../../styles/variables.scss';
+.global_container_title{
+    width: 100%;
+    background-color: $primary-color-blue;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    .title{
+        padding: 20px;
+   
+    
+ 
+        width: 100%;
+        max-width: 900px;
+        color: white;
+        font-size: $font-family-title;
+        font-size: clamp(40px, 5vw, 100px);
+        line-height:clamp(50px, 6vw, 100px);
+        font-weight: 500;
+        margin-top: 10vh;
+        margin-bottom: 20px;
+    }
+
+}
+
+.global_container_paragraph{
+    width: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    .paragraph{
+        padding: 20px;
+
+        width: 100%;
+        max-width: 900px;
+        font-size: 1rem;
+        font-family: $font-family-body;
+        line-height: 1.8rem;
+    }
+}

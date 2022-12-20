@@ -13,7 +13,7 @@ export default function ImageBloc({image}) {
             <Image
                 className={styles.image}
                 src={url}
-                alt={alt}
+                alt={alt.toString()}
                 fill
                 />
           }

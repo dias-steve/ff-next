@@ -6,8 +6,9 @@ import PrimaryBtn from '../../BtnComponents/PrimaryBtn/PrimaryBtn';
 import styles from './SubMenu.module.scss';
 
 export const SubBtn = ({link, label}) => {
+    const options = link.startsWith('http') ? {target:'_blank'} : {}
     return (
-        <Link href={link}>
+        <Link {...options} href={link}>
             <div className={styles.sub_btn_global_container}>
                 <span className={styles.sub_btn_label} dangerouslySetInnerHTML= {{__html: label}} />
             </div>
@@ -17,7 +18,7 @@ export const SubBtn = ({link, label}) => {
 
 
 export default function SubMenu({menuItemsList}) {
-    console.log(menuItemsList)
+
     
   return (
     <div className={styles.global_container}>

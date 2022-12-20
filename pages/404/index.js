@@ -1,24 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import HeroHomeSection from '../../components/BlocSectionComponent/BlocSectionManager/HeroHomeSection/HeroHomeSection';
+import PrimaryBtn from '../../components/BtnComponents/PrimaryBtn/PrimaryBtn';
+
 import { initializePage } from '../../utils/global.utils';
 
-import gsap from "gsap/dist/gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+import styles from './404.module.scss';
 
-import styles from './parcours.module.scss';
-import BlocSectionManager from '../../components/BlocSectionComponent/BlocSectionManager/BlocSectionManager';
 
 
 export default function Index(props) {
 
-    const {seo, content}= props.pageData;
+
     const generalSettings = props.generalSettings;
     const dispatch = useDispatch();
 
-    console.log(content);
+
+
 
 
 
@@ -30,13 +28,17 @@ export default function Index(props) {
     },[]);
   return (
     <div className={styles.global_container}>
-        <BlocSectionManager forParcours={true} content={content} gsap={gsap}/>
+       <span className={styles.title}>Ooops, vous êtes perdu ?</span>
+       <div className ={styles.btn_wrapper}>
+        <PrimaryBtn label={'Retourner à l&#39accueil'} link='/' colorLabel='blue'/>
+       </div>
+
     </div>
   )
 }
 
 export async function getStaticProps() {
-    const data = await fetch(process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/stepspage", {
+    const data = await fetch(process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/aboutpage", {
       // Adding method type
       method: "GET",
   
@@ -70,6 +72,3 @@ export async function getStaticProps() {
       revalidate: 60, // rechargement toutes les 10s
     };
   }
-
-
-  

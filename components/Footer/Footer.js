@@ -7,9 +7,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 const FooterItem = ({ data }) => {
   const { link, name } = data;
+  let options = link.startsWith('http') ? {target:'_blank'} : {}
+
+  
   return (
 
-      <Link href={link} className={styles.item_btn_global_container}>
+      <Link href={link} {...options} className={styles.item_btn_global_container}>
       <span
         dangerouslySetInnerHTML={{ __html: name }}
         className={styles.name}

@@ -4,11 +4,14 @@ import styles from './HomeParagraph1Section.module.scss';
 import {motion, useScroll, useTransform} from 'framer-motion';
 import { colorConverterCSS } from '../../../../utils/global.utils';
 export default function HomeParagraph1Section({content}) {
-  const {title_1, paragraph_1, image_1, image_2, title_3, paragraph_2, background_color} = content
+  const {title_1, paragraph_1, image_1, image_2, title_3, paragraph_2, background_color, id_css} = content
   let {scrollYProgress} = useScroll();
   let y = useTransform(scrollYProgress, [0,1], ["-30%", "30%"])
+
+
+  const optionsSection = {id: id_css} || {};
   return (
-    <div className={[styles.global_container, background_color ? colorConverterCSS(background_color,styles): styles.color_brown].join(" ")}>
+    <div {...optionsSection} className={[styles.global_container, background_color ? colorConverterCSS(background_color,styles): styles.color_brown].join(" ")}>
     <div className= {styles.global_content}>
 
       <div className={styles.paragraph_1_section}>

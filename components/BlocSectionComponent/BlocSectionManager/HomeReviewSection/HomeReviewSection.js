@@ -17,7 +17,8 @@ export const SingleReview = ({image, name, paragraph}) => {
     )
 }
 export default function HomeReviewSection({content, gsap}) {
-    const { title_2, reviews_list} = content;
+    const { title_2, reviews_list, id_css} = content;
+    const optionsSection = {id: id_css} || {};
     const nbReviews =  reviews_list && Array.isArray(reviews_list) ? reviews_list.length : 0;
 
     const height_list = nbReviews*550;
@@ -111,7 +112,7 @@ export default function HomeReviewSection({content, gsap}) {
     
 
   return (
-    <div ref={globalContainerRef}  className={styles.global_container}>
+    <div {...optionsSection} ref={globalContainerRef}  className={styles.global_container}>
         <div style={styles_list} className={styles.global_content}>
 
             <div  ref={titleRef}  className={styles.title} dangerouslySetInnerHTML={{__html: title_2}}/>

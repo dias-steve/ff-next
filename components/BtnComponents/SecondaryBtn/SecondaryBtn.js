@@ -14,8 +14,9 @@ export default function SecondaryBtn({label, link, color ='black'}) {
         </div>
     }
     if(link){
+        const options = link.startsWith('http') ? {target:'_blank'} : {}
         return (
-            <Link href={link}>
+            <Link {...options} href={link}>
                 <BtnContent />
             </Link>
           )

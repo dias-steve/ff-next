@@ -1,0 +1,173 @@
+@import "../../styles/variables.scss";
+//variabkle
+$primary-color: black;
+$primary-color-darker-focus: $primary-color-blue;
+$secondary-color-gray: #3334367b;
+
+$font-label: $font-family-title;
+$font-text: $font-family-title;
+
+$font-weight-label-input: 200;
+$font-weight-text-input: 200;
+
+$color-label-error: rgb(189, 18, 18);
+$color-border-error: rgba(189, 18, 18, 0.593);
+
+
+
+.globalContainer{
+    margin: 5px;
+    padding: 0;
+
+    .messageErrorWrapper{
+        margin-left: 10px;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        .messageError{
+            margin: 2px 0 0 10px;
+            padding: 0;
+            color: $color-label-error;
+            font-size: 0.8rem;
+            line-height: 0.8rem;
+
+            height: fit-content;
+        }
+        .icon{
+            width: 15px;
+
+        }
+
+    }
+}
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 60px;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+
+
+
+
+    
+    &.blackStyle{
+        input, textarea{
+            color: $primary-color !important;
+            border-color:transparent;
+            background-color: rgba(0, 0, 0, 0.225) !important;
+            caret-color: $primary-color;
+        }
+        .label{
+            color: $primary-color-darker-focus !important;
+            
+        }
+        
+    }
+
+    &.whiteStyle{
+        input, textarea{
+            color: $primary-color !important;
+            border-color:transparent;
+            background-color: rgba(255, 255, 255, 0.361) !important;
+            caret-color: $primary-color;
+        }
+        .label{
+            color: $primary-color-darker-focus !important;
+            
+        }
+        
+    }
+
+    &.errorStyle{
+        .label{
+            color: $color-label-error !important;
+        }
+
+        input, textarea{
+      
+            border-color:$color-border-error !important;
+   
+        }
+    }
+    textarea{
+        resize: none;
+    }
+
+    &.textarea{
+        height: 100%;
+     
+    }
+
+    &.notTextarea{
+        height: 60px;
+    }
+    .label{
+        font-size: 1rem;
+        font-weight: $font-weight-label-input;
+        position: absolute;
+        z-index: 1;
+        transition: 300ms;
+        left: 15px;
+        margin-top: 2px;
+        font-family: $font-label;
+
+       &.upLabel{
+      top: 0px;
+        font-size: 0.7rem;
+      
+       }
+
+       &.notUpLabel{
+     
+       top: 30px;
+        font-size: 0.9rem;
+        color: $secondary-color-gray;
+      
+       }
+       &.onFocus{
+        color: $primary-color-darker-focus;
+       }
+       &.notOnFocus{
+        color: black;
+       }
+
+ 
+        
+    }
+
+
+    .input {
+        margin-top: 20px;
+        border: 3px solid $secondary-color-gray;
+        padding: 10px 15px;
+
+        z-index: 2;
+        background-color: transparent;
+      
+        border-style: solid ;
+        height: 100%;
+        transition: 300ms;
+        font-size: 1rem;
+        font-weight: $font-weight-text-input;
+        &::placeholder {
+
+            opacity: 0;
+           
+            
+        }
+        &:focus{
+            border-color:$primary-color-darker-focus;
+            outline: none;
+        }
+
+        
+
+
+    }
+
+ 
+}
+
