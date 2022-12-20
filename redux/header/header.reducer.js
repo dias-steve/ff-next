@@ -4,6 +4,7 @@ export const INITIAL_STATE = {
     is_show_menu: false,
     is_show_search: false,
     is_up_menu: true,
+    menus_data: {},
 
 }
 
@@ -24,6 +25,11 @@ const headerReducer = (state=INITIAL_STATE,  action) => {
                 ...state,
                 is_up_menu: action.payload
             }
+        case headerTypes.SET_MENU_DATA:
+                return{
+                    ...state,
+                    menus_data: action.payload
+                }
         default:
             return state;
     }

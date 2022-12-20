@@ -21,7 +21,7 @@ const mapState = (state) => ({
 export default function Header() {
   const { auth, header } = useSelector(mapState);
   const [isShow, setIsShow] = useState(true);
-  const { is_show_menu, is_show_search,   is_up_menu } = header;
+  const { is_show_menu, is_show_search,   is_up_menu, menus_data: menus } = header;
   const [y, setY] = useState(0);
   const dispatch = useDispatch();
   const [isTransparentBG, setIsTransparentBG] = useState(true);
@@ -119,7 +119,9 @@ export default function Header() {
         </Link>
         
         <div className={[styles.subMenu_wrapper, is_up_menu ? styles.is_up :styles.is_down  ].join(" ")}>
-          <SubMenu />
+          {
+            <SubMenu menuItemsList={menus} />
+          }
         </div>
       </div>
     </div>

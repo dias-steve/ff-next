@@ -13,3 +13,8 @@ export const setIsUpMenu = (isUpMenu) => ({
     type: headerTypes.SET_IS_UP_MENU,
     payload: isUpMenu
 })
+
+export const setMenuData = (data) => ({
+    type: headerTypes.SET_MENU_DATA,
+    payload:data
+}) 

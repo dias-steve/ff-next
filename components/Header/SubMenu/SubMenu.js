@@ -16,12 +16,19 @@ export const SubBtn = ({link, label}) => {
 }
 
 
-export default function SubMenu() {
+export default function SubMenu({menuItemsList}) {
+    console.log(menuItemsList)
+    
   return (
     <div className={styles.global_container}>
         <div className={styles.sub_second_btn_wrapper}>
-            <SubBtn label= {'Nos Parcours'} link={'/parcours'}/>
-            <SubBtn label={'Nous contacter'} link={'/contact'} />
+            {
+                menuItemsList && Array.isArray(menuItemsList) && menuItemsList.length > 0 &&
+                menuItemsList
+                    .slice(0, 3)
+                    .map(menuItem => <SubBtn label={menuItem.name} link={menuItem.link} />)
+            }
+
         </div>
 
         <div className={styles.primarybtn_wrapper}>
