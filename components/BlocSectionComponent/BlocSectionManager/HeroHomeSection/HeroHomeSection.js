@@ -39,7 +39,7 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
       const elImage = imageRef.current;
       const elImage2 = imageRef2.current;
       const eldescriptionBlock = descriptionBlocRef.current;
-      console.log(elImage)
+
   
       gsap.timeline(       
         {scrollTrigger:{

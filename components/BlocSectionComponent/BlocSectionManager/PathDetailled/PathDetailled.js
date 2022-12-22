@@ -2,13 +2,14 @@ import React from 'react'
 import styles from './PathDetailled.module.scss';
 import { v4 as uuidv4 } from 'uuid';
 import ImageBloc from '../../../ImageBloc/ImageBloc';
+import { colorConverterCSS } from '../../../../utils/global.utils';
 
 const SingleStep = ({data}) => {
-  const {title,step_number, thumbnail, content} = data;
+  const {title,step_number, thumbnail, content, bg_color} = data;
 
 
   return (
-  <div className={styles.single_step_container} id={'step'+step_number}>
+  <div className={[styles.single_step_container, bg_color ? colorConverterCSS(bg_color,styles): styles.color_white].join(" ")} id={'step'+step_number}>
   <div className={[styles.image_container].join(" ")}>
     <span className={styles.step_number}>0{step_number}</span>
     <div className={styles.image_wrapper}>

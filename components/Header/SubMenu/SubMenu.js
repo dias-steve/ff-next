@@ -20,7 +20,6 @@ export const SubBtn = ({link, label}) => {
 
 export default function SubMenu({menuItemsList, menuOrange}) {
 
-    console.log(menuOrange);
   return (
     <div className={styles.global_container}>
         <div className={styles.sub_second_btn_wrapper}>

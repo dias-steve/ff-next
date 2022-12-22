@@ -4,7 +4,7 @@ import ImageBloc from '../ImageBloc/ImageBloc'
 import Head from 'next/head';
 
 export default function EnMaintenancePage({ maintenanceData,generalSettings}) {
-    console.log(maintenanceData)
+
     const {maintenance_message, maintenance_thumbnail} = maintenanceData;
   return (
     <>

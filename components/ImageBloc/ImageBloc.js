@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './ImageBloc.module.scss';
 import {motion, useScroll, useTransform} from 'framer-motion';
-export default function ImageBloc({image}) {
+export default function ImageBloc({image, ...otherProps}) {
 
     const {url, alt} = image || {url: null, alt: null};
   return (
@@ -15,6 +15,8 @@ export default function ImageBloc({image}) {
                 src={url}
                 alt={alt.toString()}
                 fill
+            
+                {...otherProps}
                 />
           }
         </div>

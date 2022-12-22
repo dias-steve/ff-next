@@ -7,10 +7,35 @@ $break-point-1: 600px;
     width: 100%;
     display: flex;
     justify-content: center;
+
+
     .global_content{
 
     }
     .single_step_container{
+
+        &.color_orange{
+            background-color: $primary-color-orange !important;
+            color: white !important;
+        }
+        &.color_blue{
+            background-color: $primary-color-blue !important;
+            color: white !important;
+        }
+        &.color_brown{
+            background-color: $primary-color-brown !important;
+            color: white !important;
+        }
+    
+        &.color_darkgreen{
+            background-color: $primary-color-brown !important;
+            color: white !important;
+        }
+        &.color_white{
+            background-color: white!important;
+            color: $secondary-color-dark-green !important;
+    
+        }
         @media screen and (min-width: $break-point-1) {
             width: 100%;
             position: sticky;
@@ -43,6 +68,7 @@ $break-point-1: 600px;
             position: absolute;
             z-index: 2;
             background-color: white;
+            color: $secondary-color-dark-green;
             top: 0;
             right:0;
             font-size: clamp(30px, 20vw, 150px);
@@ -54,7 +80,7 @@ $break-point-1: 600px;
 
     .paragraph_container{
         padding: clamp(50px, 10%, 100px) 20px;
-        background-color: white;
+
         @media screen and (min-width: $break-point-1) {
             padding: 8%;
             margin: 0;

@@ -39,7 +39,7 @@ export default function HeroSection({content, gsap, forParcours = true}) {
       const elImage = imageRef.current;
       const elImage2 = imageRef2.current;
       const eldescriptionBlock = descriptionBlocRef.current;
-      console.log(elImage)
+
   
       gsap.timeline(       
         {scrollTrigger:{
@@ -89,6 +89,7 @@ export default function HeroSection({content, gsap, forParcours = true}) {
                         src={image_1.url}
                         alt={image_1.alt}
                         fill
+                        size={'100vw'}
                         />
                 </div>
                 }
