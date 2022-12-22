@@ -3,6 +3,7 @@ import ContactBloc from "../BlocSectionManager/ContactBloc/ContactBloc";
 import ContenuGeneralSection from "../BlocSectionManager/ContenuGeneralSection/ContenuGeneralSection";
 
 import HeroHomeSection from "../BlocSectionManager/HeroHomeSection/HeroHomeSection";
+import HeroSection from "../BlocSectionManager/HeroSection/HeroSection";
 import HomeConclusionParagraph from "../BlocSectionManager/HomeConclusionParagraph/HomeConclusionParagraph";
 import HomeParagraph1Section from "../BlocSectionManager/HomeParagraph1Section/HomeParagraph1Section";
 import HomePathSection from "../BlocSectionManager/HomePathSection/HomePathSection";
@@ -45,6 +46,9 @@ export default function BlocSection({ data, gsap, forParcours }) {
 
     case "contenu-general":
       return <ContenuGeneralSection content={data} gsap={gsap} />;
+
+    case "hero-simple":
+      return <HeroSection content={data} gsap={gsap} />;
     default:
       return <p> components type not found </p>;
   }
