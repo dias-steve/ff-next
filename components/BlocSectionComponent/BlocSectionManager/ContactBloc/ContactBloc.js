@@ -16,6 +16,7 @@ export default function ContactBloc({content, gsap}) {
         </div>
         <div className={styles.paragraph_container}>
 
+          <div className={styles.paragraph_title_content_wrapper}>
           <h1 className={styles.title} dangerouslySetInnerHTML={{__html: title_1}}/>
           <p className={styles.paragraph} dangerouslySetInnerHTML={{__html:paragraph_1}}/>
 
@@ -79,6 +80,7 @@ export default function ContactBloc({content, gsap}) {
           </div>
           }
    
+        </div>
         </div>
       </div>
     </div>

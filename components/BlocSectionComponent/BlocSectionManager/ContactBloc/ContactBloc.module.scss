@@ -12,6 +12,8 @@ $break_point : 700px;
 
 
     }
+
+ 
     .image_wrapper{
         height: 100vw;
         width: 100vw;
@@ -28,8 +30,15 @@ $break_point : 700px;
     .paragraph_container{
         background-color: $primary-color-blue;
         color: white;
-        padding: clamp(60px, 15%, 300px) 20px;
+        padding: clamp(60px, 15%, 300px) 30px;
         margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .paragraph_title_content_wrapper{
+            max-width: 600px;
+        }
+           
         .title, .paragraph{
             padding: 0;
             margin: 0;
@@ -37,7 +46,7 @@ $break_point : 700px;
 
         .title{
             font-family: $font-family-title;
-            font-size: clamp(30px, 8vw, 100px);
+            font-size: clamp(40px, 8vw, 100px);
             font-weight: 400;
             line-height: clamp(30px, 8vw, 100px);
 
@@ -48,7 +57,8 @@ $break_point : 700px;
             font-family: $font-family-body;
             font-size: 1.4rem;
             line-height: 1.8rem;
-            font-weight: 400;
+            font-weight: 300;
+     
         }
 
         .address_container{
@@ -59,7 +69,7 @@ $break_point : 700px;
             }
             .address{
                 font-size: 1rem;
-                font-weight: 400;
+                font-weight: 300;
             }
             
         }
