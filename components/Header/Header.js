@@ -120,7 +120,7 @@ export default function Header() {
         
         <div className={[styles.subMenu_wrapper, is_up_menu ? styles.is_up :styles.is_down  ].join(" ")}>
           {
-            <SubMenu menuItemsList={menus} />
+            <SubMenu menuItemsList={menus.sub_menu} menuOrange={menus.orange_menu} />
           }
         </div>
       </div>

@@ -4,11 +4,11 @@ import { setIsShowMenu, setIsShowSearch, setMenuData } from "../redux/header/hea
 
 
 export const initializePage = (dispatch,generalSettingsData) => {
-    const {menus:{menu_header_sec:{childrens: menu_items}}, menus, copyright_text}= generalSettingsData;
+    const {menus:{menu_header_sec:{childrens: menu_items}, menu_header_orange:{childrens: menu_orange}}, menus, copyright_text}= generalSettingsData;
     dispatch(setIsShowMenu(false));
     dispatch(setIsShowSearch(false));
     dispatch(setFooterListMenu(menus));
-    dispatch(setMenuData(menu_items || []));
+    dispatch(setMenuData({sub_menu: menu_items || [], orange_menu: menu_orange ||[]}));
     dispatch(setFooterCopyright(copyright_text));
 }
 

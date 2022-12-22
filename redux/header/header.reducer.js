@@ -4,7 +4,7 @@ export const INITIAL_STATE = {
     is_show_menu: false,
     is_show_search: false,
     is_up_menu: true,
-    menus_data: {},
+    menus_data: {sub_menu:[], orange_menu:[]},
 
 }
 

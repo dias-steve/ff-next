@@ -18,9 +18,9 @@ export const SubBtn = ({link, label}) => {
 }
 
 
-export default function SubMenu({menuItemsList}) {
+export default function SubMenu({menuItemsList, menuOrange}) {
 
-    
+    console.log(menuOrange);
   return (
     <div className={styles.global_container}>
         <div className={styles.sub_second_btn_wrapper}>
@@ -33,15 +33,19 @@ export default function SubMenu({menuItemsList}) {
 
         </div>
 
-        <div className={styles.primarybtn_wrapper}>
-            <PrimaryBtn 
-                label={'Prendre un RDV'}
-                colorLabel='white'
-                colorBackgroud ='orange'
-                link='https://google.fr/'
-                onHeader={true}
-            />
-        </div>
+
+        {menuOrange && Array.isArray(menuOrange) && menuOrange.length > 0 && menuOrange[0].link !== "" && menuOrange[0].link !== " "&& 
+                    <div className={styles.primarybtn_wrapper}>
+                    <PrimaryBtn 
+                        label={menuOrange[0].name}
+                        colorLabel='white'
+                        colorBackgroud ='orange'
+                        link={menuOrange[0].link}
+                        onHeader={true}
+                    />
+                </div>
+        }
+
 
     </div>
   )

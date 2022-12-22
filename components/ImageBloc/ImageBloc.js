@@ -4,12 +4,12 @@ import styles from './ImageBloc.module.scss';
 import {motion, useScroll, useTransform} from 'framer-motion';
 export default function ImageBloc({image}) {
 
-    const {url, alt} = image;
+    const {url, alt} = image || {url: null, alt: null};
   return (
         <div 
 
         className={styles.image_wrapper}>
-          {url &&
+          {image && url &&
             <Image
                 className={styles.image}
                 src={url}

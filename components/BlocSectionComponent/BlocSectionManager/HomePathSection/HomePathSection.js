@@ -6,7 +6,7 @@ import Link from 'next/link';
 import useDeviceDetect,{ getWitdthScreen } from "../../../../hooks/useDeviceDectect";
 
 export const PathCard = ({contentData, gsap}) => {
-  const {id, thumbnail, content,title, step_number} = contentData;
+  const {id, thumbnail_tiny, content,title, step_number} = contentData;
 
   /**Anniamtion */
   const backgroundRef = useRef(null);
@@ -82,7 +82,7 @@ export const PathCard = ({contentData, gsap}) => {
 
   return (<Link href={'/parcours#step'+step_number} className={styles.pathcard_global_container}>
     <div ref= {imageRef} className={styles.image_wrapper}>
-      <ImageBloc image={thumbnail} />
+      <ImageBloc image={thumbnail_tiny} />
     </div>
 
     <div className={styles.content_container}>

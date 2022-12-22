@@ -5,7 +5,7 @@ import styles from './ContactBloc.module.scss';
 
 export default function ContactBloc({content, gsap}) {
   console.log(content);
-  const {image_1,title_1, paragraph_1 , id_css,contact_details:{phone_number, whatapp_number, appointement_url, address, email}} = content;
+  const {image_1,title_1, paragraph_1 , id_css, contact_phone_number: phone_number, contact_whatapp_number: whatapp_number, contact_rdv_url:appointement_url, contact_address:address, contact_email:email} = content;
 
   const optionsSection = {id: id_css} || {};
   return (
