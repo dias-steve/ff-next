@@ -44,9 +44,16 @@
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../assets/Poppins/Poppins-light.ttf');
+    src: url('../assets/Poppins/Poppins-Light.ttf');
     font-weight: 300;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/Poppins/Poppins-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
