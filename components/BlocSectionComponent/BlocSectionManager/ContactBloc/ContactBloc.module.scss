@@ -38,7 +38,7 @@ $break_point : 700px;
         .title{
             font-family: $font-family-title;
             font-size: clamp(30px, 8vw, 100px);
-            font-weight: 300;
+            font-weight: 400;
             line-height: clamp(30px, 8vw, 100px);
 
         }
@@ -48,18 +48,18 @@ $break_point : 700px;
             font-family: $font-family-body;
             font-size: 1.4rem;
             line-height: 1.8rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .address_container{
             margin-top: 60px;
             .title_address{
                 font-size: 1.5rem;
-                font-weight: 300;
+                font-weight: 400;
             }
             .address{
                 font-size: 1rem;
-                font-weight: 300;
+                font-weight: 400;
             }
             
         }
