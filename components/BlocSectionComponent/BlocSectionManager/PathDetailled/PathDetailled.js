@@ -9,7 +9,10 @@ const SingleStep = ({data}) => {
 
 
   return (
+
   <div className={[styles.single_step_container, bg_color ? colorConverterCSS(bg_color,styles): styles.color_white].join(" ")} id={'step'+step_number}>
+
+    <div className={styles.single_step_content_wrapper}>
   <div className={[styles.image_container].join(" ")}>
     <span className={styles.step_number}>0{step_number}</span>
     <div className={styles.image_wrapper}>
@@ -20,7 +23,10 @@ const SingleStep = ({data}) => {
     <h2 className={[styles.title]} dangerouslySetInnerHTML={{__html: title}}/>
     <div className={[styles.paragraph]} dangerouslySetInnerHTML={{__html: content}}/>
   </div>
-  </div>)
+  </div>
+  </div>
+
+  )
 }
 export default function PathDetailled({content}) {
  

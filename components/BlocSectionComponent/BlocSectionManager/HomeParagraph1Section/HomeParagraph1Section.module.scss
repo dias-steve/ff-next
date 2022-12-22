@@ -69,7 +69,11 @@ $break_point: 700px;
             margin-left: 30%;
          
             @media screen and (min-width: 1300px) {
-                margin-top: 20%;
+                margin-top: 50%;
+                height: 600px !important;
+                width: 400px !important;
+            
+                
             }
 
             @media screen and (min-width: $break_point) {
@@ -118,7 +122,8 @@ $break_point: 700px;
                 font-size: clamp(50px, 10vw, 70px);
                 font-family: $font-family-title;
                 font-weight: 400;
-                margin: 20px 0;
+                margin: clamp(50px, 6%, 100px) 0 clamp(30px, 5%, 100px) 0;
+                line-height: clamp(50px, 10vw, 70px);
 
              
             }

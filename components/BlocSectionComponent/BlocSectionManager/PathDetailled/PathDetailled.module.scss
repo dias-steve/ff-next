@@ -1,6 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 $break-point-1: 600px;
+$break_point-2: 1400px;
 .global_container{
     padding: 0;
     margin: 0;
@@ -36,13 +37,28 @@ $break-point-1: 600px;
             color: $secondary-color-dark-green !important;
     
         }
+
+        .single_step_content_wrapper{
+            @media screen and (min-width: $break-point-1) {
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: $break_point-2;
+       
+            }
+
+        }
         @media screen and (min-width: $break-point-1) {
-            width: 100%;
+            width: 100vw;
             position: sticky;
             top:0;
             display: flex;
-            flex-direction: row-reverse;
+            justify-content: center;
+
   
+        }
+
+        @media screen and (min-width: $break_point-2) {
+            min-height: 100vh;
         }
     }
     .image_container{
@@ -52,6 +68,13 @@ $break-point-1: 600px;
             padding: 0;
 
           }
+          @media screen and (min-width: $break_point-2) {
+           
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         .image_wrapper{
             @media screen and (min-width: $break-point-1) {
                 width: 50vw;
@@ -62,6 +85,10 @@ $break-point-1: 600px;
             }
             width: 100vw;
             height: 120vW;
+
+            @media screen and (min-width: $break_point-2) {
+                height: 80vh;
+            }
         }
 
         .step_number{
@@ -73,6 +100,12 @@ $break-point-1: 600px;
             right:0;
             font-size: clamp(30px, 20vw, 150px);
             padding: 10px 5px;
+
+            @media screen and (min-width: $break_point-2) {
+                top: 5%;
+                right: -5%;
+        
+            }
 
         }
 
