@@ -60,7 +60,7 @@ export default function HomeReviewSection({content, gsap}) {
               start: 'center center',
               end: "center -30%",
            
-              toggleActions: "restart none none none",
+              //toggleActions: "restart none none none",
                 
     
           

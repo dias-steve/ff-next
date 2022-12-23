@@ -15,7 +15,7 @@ export default function HomeSpeechSection({content, gsap}) {
           trigger: elTitle,
           start: "start 80%",
           end: "50% 50%",
-          toggleActions: "restart none reverse none",
+          //toggleActions: "restart none reverse none",
 
     
           

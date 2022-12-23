@@ -48,7 +48,7 @@ export const PathCard = ({contentData, gsap}) => {
           trigger: elBackground,
           start: "-40% 80%",
           end: "20% 50%",
-          toggleActions: "restart none reverse none",
+          //toggleActions: "restart none reverse none",
     
           
       }}).fromTo( elBackground,
