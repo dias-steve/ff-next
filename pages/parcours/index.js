@@ -12,7 +12,7 @@ import styles from './parcours.module.scss';
 import BlocSectionManager from '../../components/BlocSectionComponent/BlocSectionManager/BlocSectionManager';
 import Seo from '../../components/Seo/Seo';
 
-
+//tes
 export default function Index(props) {
 
     const {seo, content}= props.pageData;
