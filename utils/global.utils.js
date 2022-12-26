@@ -1,6 +1,6 @@
 
 import { setFooterCopyright, setFooterListMenu } from "../redux/footer/footer.action";
-import { setIsShowMenu, setIsShowSearch, setMenuData } from "../redux/header/header.actions"
+import { setIsShowMenu, setIsShowSearch, setIsUpMenu, setMenuData } from "../redux/header/header.actions"
 
 
 export const initializePage = (dispatch,generalSettingsData) => {
@@ -10,6 +10,9 @@ export const initializePage = (dispatch,generalSettingsData) => {
     dispatch(setFooterListMenu(menus));
     dispatch(setMenuData({sub_menu: menu_items || [], orange_menu: menu_orange ||[]}));
     dispatch(setFooterCopyright(copyright_text));
+    dispatch( setIsUpMenu(true));
+
+    dispatch(setIsShowMenu(false));
 }
 
 export const colorConverterCSS = (color, styles) => {
