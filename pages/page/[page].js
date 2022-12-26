@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import BlocSectionManager from '../../components/BlocSectionComponent/BlocSectionManager/BlocSectionManager';
 import Head from 'next/head';
+import Seo from '../../components/Seo/Seo';
 
 
 export default function Page(props) {
@@ -29,11 +30,7 @@ export default function Page(props) {
       },[]);
   return (
     <div>
-        <Head>
-        <title>{seo.title_seo}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={seo.meta_description_seo} />
-        </Head>
+        <Seo seoData={seo}/>
        <BlocSectionManager forParcours={true} content={content} gsap={gsap}/>
     </div>
   )

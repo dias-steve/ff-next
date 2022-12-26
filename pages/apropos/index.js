@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import styles from './apropos.module.scss';
 import BlocSectionManager from '../../components/BlocSectionComponent/BlocSectionManager/BlocSectionManager';
+import Seo from '../../components/Seo/Seo';
 
 
 export default function Index(props) {
@@ -29,9 +30,12 @@ export default function Index(props) {
       initializePage(dispatch, generalSettings);
     },[]);
   return (
+    <>
+    <Seo seoData={seo} />
     <div className={styles.global_container}>
         <BlocSectionManager forParcours={true} content={content} gsap={gsap}/>
     </div>
+    </>
   )
 }
 

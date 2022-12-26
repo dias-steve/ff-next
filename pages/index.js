@@ -10,6 +10,7 @@ import BlocSectionManager from '../components/BlocSectionComponent/BlocSectionMa
 import styles from '../styles/Home.module.scss'
 import { initializePage } from '../utils/global.utils';
 import { useEffect } from 'react';
+import Seo from '../components/Seo/Seo';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,11 +28,7 @@ export default function Home(props) {
   
   return (
     <>
-      <Head>
-        <title>{seo.title_seo}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={seo.meta_description_seo} />
-      </Head>
+      <Seo seoData={seo}/>
       <div className={styles.global_container}>
   
         <BlocSectionManager gsap={gsap} content = {content} />
