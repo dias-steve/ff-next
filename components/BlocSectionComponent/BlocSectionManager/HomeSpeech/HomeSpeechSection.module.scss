@@ -15,10 +15,11 @@
             text-align: center;
         }
         .title{
-            font-size: clamp(20px, 10vw, 80px);
+            font-size: clamp(20px, 8vw, 70px);
             font-family: $font-family-title;
             font-weight: 400;
             margin: 20px 0;
+            line-height:clamp(20px, 10vw, 80px);
         }
 
         .paragraph{

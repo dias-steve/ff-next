@@ -38,7 +38,7 @@ export default function ContactBloc({content, gsap}) {
           { phone_number && phone_number !== "" &&
           <div className={styles.item_btn_wrapper}>
             <PrimaryBtn 
-            label={'Tel: '+phone_number}
+            label={phone_number}
             colorLabel='blue'
             link={'tel:'+phone_number+'?text=Bonjour'}
         
@@ -50,7 +50,7 @@ export default function ContactBloc({content, gsap}) {
         { email && email !== "" &&
         <div className={styles.item_btn_wrapper}>
             <PrimaryBtn 
-            label={'Email: '+email}
+            label={email}
             colorLabel='blue'
             link={'mailto:'+email+'?text=Bonjour'}
       
@@ -63,7 +63,7 @@ export default function ContactBloc({content, gsap}) {
         { appointement_url && appointement_url !== "" &&
         <div className={styles.item_btn_wrapper}>
             <PrimaryBtn 
-            label={'appointement_url: '+appointement_url}
+            label={'Prendre un RDV'}
             colorLabel='blue'
             link={appointement_url}
             target='_blank'
@@ -75,7 +75,7 @@ export default function ContactBloc({content, gsap}) {
         </div>
         { address && address !== "" &&
           <div className={styles.address_container}>
-          <h2 className={styles.title_address}> Adresse postale</h2>
+          <h2 className={styles.title_address}>Nous écrire</h2>
           <span className={styles.address} dangerouslySetInnerHTML={{__html:address}}/>
           </div>
           }
