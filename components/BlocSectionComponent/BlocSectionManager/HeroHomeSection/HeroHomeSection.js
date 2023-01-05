@@ -78,8 +78,8 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
   return (
     <div {...optionsSection} className={styles.global_container}>
     
-        <div className={[styles.global_content, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
-            <div className={[styles.grid_container, styles.big_image_containter, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
+        <div className={[styles.global_content,  styles.notForParcours].join(" ")}>
+            <div className={[styles.grid_container, styles.big_image_containter,  styles.notForParcours].join(" ")}>
                 {image_1 && image_1?.url &&
                 <div
                 ref= {imageRef}
@@ -93,7 +93,7 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
                 </div>
                 }
             </div>
-            <div className={[styles.grid_container, styles.title_container, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
+            <div className={[styles.grid_container, styles.title_container, styles.notForParcours].join(" ")}>
                 <h1 className={styles.title} dangerouslySetInnerHTML={{__html: title_1}}/> 
                 {forParcours &&
                      <p className={styles.description_paragraph} dangerouslySetInnerHTML={{__html:paragraph_1}}/>
@@ -114,7 +114,7 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
             </div>
             }
             
-            <div className={[styles.grid_container, styles.tiny_image_container, forParcours ? styles.forParcours : styles.notForParcours].join(" ")}>
+            <div className={[styles.grid_container, styles.tiny_image_container,  styles.notForParcours].join(" ")}>
             {image_2 && image_1?.url &&
                 <div ref= {imageRef2} className={styles.image_wrapper}>
                     <Image 
