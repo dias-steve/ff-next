@@ -5,19 +5,39 @@ import {motion, useScroll, useTransform} from 'framer-motion';
 export default function ImageBloc({image, ...otherProps}) {
 
     const {url, alt} = image || {url: null, alt: null};
+    const is_svg = () => {
+      var isValid = /\.svg$/i.test(url);
+      if (!isValid) {
+        return false
+      }
+      return true;
+    }
+      console.log(url);
+      console.log(is_svg());
   return (
         <div 
 
         className={styles.image_wrapper}>
           {image && url &&
-            <Image
-                className={styles.image}
+            is_svg() ? 
+            
+            <img
+                className={[styles.image, styles.svg].join(" ")}
                 src={url}
                 alt={alt.toString()}
-                fill
-            
                 {...otherProps}
                 />
+
+                    :     
+            <Image
+            className={styles.image}
+            src={url}
+            alt={alt.toString()}
+         
+            fill
+        
+            {...otherProps}
+            />
           }
         </div>
   )
