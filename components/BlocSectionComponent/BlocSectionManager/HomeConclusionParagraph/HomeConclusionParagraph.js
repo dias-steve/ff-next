@@ -5,16 +5,7 @@ import ImageBloc from '../../../ImageBloc/ImageBloc';
 import styles from './HomeConclusionParagraph.module.scss';
 
 
-export function Comp({Componant}){
 
-  return (
-    <Componant label={'testing'}/>
-  )
-}
-
-export function TestC ({label}){
-  return (<div><p>:::{label}</p></div>)
-}
 export default function HomeConclusionParagraph({content, gsap}) {
 
   const {title_1, paragraph_1, image_1, btn_label_1, btn_label_2, btn_2_link, btn_1_link, id_css} = content
@@ -64,7 +55,6 @@ export default function HomeConclusionParagraph({content, gsap}) {
           { btn_2_link && btn_2_link !== "" && btn_2_link !== " "&&
             <div className={styles.btn_primary_wrapper}>
             <PrimaryBtn label={btn_label_2} link={btn_2_link} colorBackgroud={'orange'} colorLabel={'white'} withBorder = {true}/>
-            <Comp Componant={TestC} />
             </div>
           }
         </div>
