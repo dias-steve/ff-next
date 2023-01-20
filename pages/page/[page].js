@@ -74,7 +74,7 @@ export async function getStaticProps(context) {
         pageData,
         generalSettings
       },
-      revalidate: 60, // rechargement toutes les 10s
+      revalidate: 50, // rechargement toutes les 10s
     };
   }
 
