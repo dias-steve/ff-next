@@ -38,7 +38,7 @@ export default function Index(props) {
   )
 }
 
-export async function getStaticProps() {
+export async function  getServerSideProps() {
     const data = await fetch(process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/contactpage", {
       // Adding method type
       method: "GET",
@@ -70,6 +70,6 @@ export async function getStaticProps() {
         pageData,
         generalSettings,
       },
-      revalidate: 60, // rechargement toutes les 10s
+      //revalidate: 60, // rechargement toutes les 10s
     };
   }
