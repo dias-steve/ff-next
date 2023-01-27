@@ -3,6 +3,7 @@ import Footer from '../Footer/Footer.js'
 import Header from '../Header/Header.js'
 import EnMaintenancePage from "../EnMaintenance/EnMaintenancePage";
 import { useDispatch, useSelector } from "react-redux";
+import PopupRGPD from '../../features/PopupRGPD/components/PopupRGPD.js';
 const mapState = (state) => ({
   auth: state.auth.auth,
 });
@@ -35,6 +36,7 @@ export default function Container(props) {
         />
       ) : (
         <>
+        <PopupRGPD/>
           <Header/>
             {props.children}
           <Footer logo={{url:'/logo-dark-green.svg', alt:'Logo'}}/>

@@ -1,10 +1,11 @@
 
+import { setContent } from "../features/PopupRGPD/redux/RGPD.reducer";
 import { setFooterCopyright, setFooterListMenu } from "../redux/footer/footer.action";
 import { setIsShowMenu, setIsShowSearch, setIsUpMenu, setMenuData } from "../redux/header/header.actions"
 
 
 export const initializePage = (dispatch,generalSettingsData) => {
-    const {menus:{menu_header_sec:{childrens: menu_items}, menu_header_orange:{childrens: menu_orange}}, menus, copyright_text}= generalSettingsData;
+    const {menus:{menu_header_sec:{childrens: menu_items}, menu_header_orange:{childrens: menu_orange}}, menus, copyright_text, rgpd}= generalSettingsData;
     dispatch(setIsShowMenu(false));
     dispatch(setIsShowSearch(false));
     dispatch(setFooterListMenu(menus));
@@ -13,6 +14,7 @@ export const initializePage = (dispatch,generalSettingsData) => {
     dispatch( setIsUpMenu(true));
 
     dispatch(setIsShowMenu(false));
+    dispatch(setContent(rgpd))
 }
 
 export const colorConverterCSS = (color, styles) => {
@@ -29,7 +31,6 @@ export const colorConverterCSS = (color, styles) => {
             return styles.color_white;
         default:
             return styles.color_darkgreen;
-
     }
 }
 

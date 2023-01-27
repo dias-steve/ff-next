@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.0",
     "framer-motion": "^7.10.0",
     "gsap": "^3.11.3",
