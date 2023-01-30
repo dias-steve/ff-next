@@ -69,23 +69,28 @@ export default function Footer({logo}) {
           </Link>
           }
         </div>
+        {footer_menu_list && footer_menu_list.footer_social_sec && (
         <div className={[styles.section_wrapper].join(" ")}>
-          {footer_menu_list && footer_menu_list.footer_social_sec && (
+
             <SectionLink data={footer_menu_list.footer_social_sec} />
-          )}
+    
         </div>
+              )}
 
+      {footer_menu_list && footer_menu_list.footer_legal_sec && (
         <div className={[styles.section_wrapper].join(" ")}>
-          {footer_menu_list && footer_menu_list.footer_legal_sec && (
+       
             <SectionLink data={footer_menu_list.footer_legal_sec} />
-          )}
+  
         </div>
-
+                )}
+      {footer_menu_list && footer_menu_list.footer_aide_sec && (
         <div className={[styles.section_wrapper].join(" ")}>
-          {footer_menu_list && footer_menu_list.footer_aide_sec && (
+         
             <SectionLink data={footer_menu_list.footer_aide_sec} />
-          )}
+     
         </div>
+             )}
       </div>
 
       <div><span className={styles.copyright} dangerouslySetInnerHTML={{__html:copyright}}/></div>
