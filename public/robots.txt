@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://frequence-femme-next.vercel.app/
+Host: https://www.frequencefemme.com/
 
 # Sitemaps
-Sitemap: https://frequence-femme-next.vercel.app/sitemap.xml
+Sitemap: https://www.frequencefemme.com/sitemap.xml
