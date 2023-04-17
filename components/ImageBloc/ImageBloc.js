@@ -12,8 +12,7 @@ export default function ImageBloc({image, ...otherProps}) {
       }
       return true;
     }
-      console.log(url);
-      console.log(is_svg());
+
   return (
         <div 
 

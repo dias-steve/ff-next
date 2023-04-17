@@ -5,7 +5,7 @@ import PrimaryBtn from '../../../components/BtnComponents/PrimaryBtn/PrimaryBtn'
 import Link from 'next/link';
 
 const BtnPrimary = ({label, handleClick}) => {
-    console.log(label)
+  
     return(
     <div className={styles.global_container_btn} onClick= {(e) => handleClick(e)}>
         <span className={styles.lable_btn} dangerouslySetInnerHTML={{__html: label}}/>
