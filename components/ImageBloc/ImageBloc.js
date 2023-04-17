@@ -32,7 +32,7 @@ export default function ImageBloc({image, ...otherProps}) {
             className={styles.image}
             src={url}
             alt={alt.toString()}
-         
+            priority
             fill
         
             {...otherProps}
