@@ -11,9 +11,9 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Container>
-        <ErrorBoundary>
+   
           <Component {...pageProps} />
-          </ErrorBoundary>
+ 
         </Container>
       </PersistGate>
     </Provider>
