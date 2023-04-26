@@ -89,6 +89,7 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
                         src={image_1.url}
                         alt={image_1.alt}
                         fill
+                        priority
                         />
                 </div>
                 }
@@ -122,6 +123,7 @@ export default function HeroHomeSection({content, gsap, forParcours}) {
                         src={image_2.url}
                         alt={image_2.alt}
                         fill
+                        priority
                         />
                 </div>
             }

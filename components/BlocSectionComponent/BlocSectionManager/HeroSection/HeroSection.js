@@ -90,6 +90,7 @@ export default function HeroSection({content, gsap, forParcours = true}) {
                         alt={image_1.alt}
                         fill
                         size={'100vw'}
+                        priority
                         />
                 </div>
                 }
