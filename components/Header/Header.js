@@ -103,10 +103,12 @@ export default function Header() {
       >
         <img 
           className={[styles.icon_menu, styles.burger_icon].join(" ")}
+          alt={'icon-menu'}
           src={'/burger-menu.svg'} 
         />
         <img 
           className={[styles.icon_menu, styles.close_icon].join(" ")}
+          alt={'icon-close'}
           src={'/close.svg'} 
         />
 

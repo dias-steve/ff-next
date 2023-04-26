@@ -36,7 +36,7 @@ export default function Page(props) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     const id = context.params.page;
     const data = await fetch(
       process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/pages/" + id,
@@ -74,11 +74,11 @@ export async function getServerSideProps(context) {
         pageData,
         generalSettings
       },
-      //revalidate: 50, // rechargement toutes les 10s
+      revalidate: 50, // rechargement toutes les 10s
     };
   }
 
-/*
+
 export async function getStaticPaths() {
     const data = await fetch(
       process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/pages"
@@ -93,7 +93,7 @@ export async function getStaticPaths() {
   
     return {
       paths,
-      fallback: false,
+      fallback: true,
     };
   }
-  */
+  

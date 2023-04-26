@@ -70,6 +70,6 @@ export async function  getServerSideProps() {
         pageData,
         generalSettings,
       },
-      //revalidate: 60, // rechargement toutes les 10s
+      revalidate: 10, // rechargement toutes les 10s
     };
   }

@@ -1,0 +1,14 @@
+.Loader{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__sipnner-wrapper{
+        height: 150px;
+        width: 150px;
+        transform: translateY(-80%);
+    }
+    
+}
