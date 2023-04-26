@@ -12,9 +12,4 @@ const withTM = require("next-transpile-modules")(["gsap"]);
 
 module.exports = withTM({});
 module.exports = nextConfig
-module.exports = {
-  i18n: {
-    locales: ["fr"],
-    defaultLocale: "fr",
-  },
-};
+
