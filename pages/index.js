@@ -37,7 +37,7 @@ export default function Home(props) {
   )
 }
 
-export async function  getServerSideProps() {
+export async function  getStaticProps() {
   const data = await fetch(process.env.NEXT_PUBLIC_REACT_APP_API_REST_DATA + "/homepage", {
     // Adding method type
     method: "GET",
