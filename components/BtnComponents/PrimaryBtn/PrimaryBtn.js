@@ -3,7 +3,7 @@ import styles from './PrimaryBtn.module.scss';
 import { colorConverterCSS } from '../../../utils/global.utils';
 import Link from 'next/link';
 
-export default function PrimaryBtn({label, link,  colorBackgroud, colorLabel, onHeader, withBorder, onClick, ...otherProps}) {
+export default function PrimaryBtn({label, link,  colorBackgroud, colorLabel, onHeader, withBorder, onClick, noArrow ,...otherProps}) {
 
 if( link ){
     const options = link.startsWith('http') ? {target:'_blank'} : {}
@@ -14,10 +14,11 @@ if( link ){
         >
             <span className={[styles.label,colorConverterCSS(colorLabel, styles)].join(" ")}
             dangerouslySetInnerHTML= {{__html: label}}/>
+            {!noArrow ?
             <img className={styles.arrow_icon}
                 src={'/arrow-'+ ( onHeader ? 'orange' : (colorLabel? colorLabel : 'black')) +'.svg'}
                 alt={'arrow icon'}
-            />
+            /> :<div className={styles.arrow_icon}/>}
         </div>
     </Link>)
 }else{

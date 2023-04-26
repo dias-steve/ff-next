@@ -53,7 +53,7 @@ export default function ContactBloc({content, gsap}) {
             label={email}
             colorLabel='blue'
             link={'mailto:'+email+'?text=Bonjour'}
-      
+            noArrow
             target='_blank'
             />
             </div>
@@ -67,6 +67,7 @@ export default function ContactBloc({content, gsap}) {
             colorLabel='blue'
             link={appointement_url}
             target='_blank'
+    
             />
             </div>
           }
