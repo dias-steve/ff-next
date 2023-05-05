@@ -31,7 +31,7 @@ export default function ImageBloc({image, ...otherProps}) {
             <Image
             className={styles.image}
             src={url}
-            alt={alt.toString()}
+            alt={alt ? alt.toString(): "image"}
             priority
             fill
         
