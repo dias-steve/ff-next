@@ -28,6 +28,9 @@ export default function ImageBloc({image, ...otherProps}) {
                 />
 
                     :     
+                    
+              url &&
+                    
             <Image
             className={styles.image}
             src={url}
@@ -37,6 +40,7 @@ export default function ImageBloc({image, ...otherProps}) {
         
             {...otherProps}
             />
+                    
           }
         </div>
   )
